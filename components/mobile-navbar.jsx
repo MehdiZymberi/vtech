@@ -21,6 +21,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Hamburger from "@/public/icons/hamburger-menu.png";
 import X from "@/public/icons/delete.png";
+import nvBG from "@/public/mobilenvbg.svg";
+import arrowRight from "@/public/icons/arrows-right.png";
 
 const navItems = [
   {
@@ -249,7 +251,7 @@ export default function MobileNavbar() {
 
   return (
     <nav className="md:hidden  z-10 fixed top-0 w-full ">
-      <div className="w-full p-2 items-center bg-cyan-500 flex flex-row  ">
+      <div className="w-full p-2 items-center bg-cyan-500 flex flex-row border-b-2  ">
         <Link
           href="/"
           className="hover:scale-110 transition-transform duration-300 ease-in-out hover:rotate-6"
@@ -265,9 +267,9 @@ export default function MobileNavbar() {
           {isOpen ? (
             <Image
               className=""
-              onClick={()=>{
-                toggleMobileMenu()
-                setActiveLink(null)
+              onClick={() => {
+                toggleMobileMenu();
+                setActiveLink(null);
               }}
               src={X}
               alt="Hamburger Icon for the mobile menu"
@@ -292,13 +294,27 @@ export default function MobileNavbar() {
         <div className="w-full max-h-screen min-h-screen pb-8 z-10 bg-cyan-500 px-5 overflow-y-scroll">
           {/* Main Content Container */}
           <div className="w-full h-screen">
-            {" "}
+            <div
+              className={`z-10 absolute inset-y-72 bg-center  inset-x-0 ${
+                activeLink ? "opacity-10 inset-y-52" : ""
+              } `}
+            >
+              <Image
+                height={750}
+                src={nvBG}
+                alt="Image of a desk with a laptop"
+              />
+            </div>
             {/* Verwijder overflow-y-scroll hier */}
             {navItems.map((item) => (
               <div key={item.title} className="w-full py-4">
                 <p
                   onClick={() => showDropdown(item.title)}
-                  className="flex items-center text-2xl font-nunito font-normal tracking-wider"
+                  className={`${
+                    activeLink === item.title
+                      ? "text-gray-200 font-bold"
+                      : "text-black"
+                  } flex items-center text-2xl font-nunito font-normal tracking-wider `}
                 >
                   {item.title}
                 </p>
@@ -315,8 +331,16 @@ export default function MobileNavbar() {
                             height={56}
                             width={56}
                           />
-                          <p className="font-nunito tracking-wider">
-                            {e.title}
+                          <p className="font-nunito tracking-wider flex ">
+                            {e.title}{" "}
+                            <span className="my-auto ml-2">
+                              <Image
+                              className="invert"
+                                src={arrowRight}
+                                height={40}
+                                alt="arrow pointing right"
+                              />
+                            </span>
                           </p>
                         </div>
                       </Link>
