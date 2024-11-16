@@ -1,0 +1,8 @@
+Nav Items{
+            <Link
+              className="hover:bg-cyan-600 hover:text-white text- p-2 rounded-lg"
+              href={item.href}
+            >
+              {item.title}
+            </Link>
+}

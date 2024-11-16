@@ -1,15 +1,10 @@
-import localFont from "next/font/local";
+import MainNavbar from "@/components/main-navbar";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+import { Nunito } from "next/font/google";
+const nunito = Nunito({
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"], // Kies de gewenste gewichten
+  subsets: ["latin"], // Je kunt ook de subsets toevoegen die je nodig hebt
 });
 
 export const metadata = {
@@ -20,9 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
+        <MainNavbar />
+        
         {children}
       </body>
     </html>

@@ -11,6 +11,13 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        nunito: ["Nunito", "sans-serif"],
+      },
+      screens: {
+        md: "950px",
+        "2xl":"1600",
+      },
     },
   },
   plugins: [],
