@@ -251,7 +251,7 @@ export default function MobileNavbar() {
 
   return (
     <nav className="md:hidden  z-10 fixed top-0 w-full ">
-      <div className="w-full p-2 items-center bg-cyan-500 flex flex-row border-b-2  ">
+      <div className={`w-full p-2 items-center bg-cyan-500 flex flex-row  ${isOpen && 'border-b-2'} `}>
         <Link
           href="/"
           className="hover:scale-110 transition-transform duration-300 ease-in-out hover:rotate-6"
