@@ -251,7 +251,11 @@ export default function MobileNavbar() {
 
   return (
     <nav className="md:hidden  z-10 fixed top-0 w-full ">
-      <div className={`w-full p-2 items-center bg-cyan-500 flex flex-row  ${isOpen && 'border-b-2'} `}>
+      <div
+        className={`w-full p-2  items-center bg-cyan-500 flex flex-row  ${
+          isOpen && "border-b-2 "
+        } `}
+      >
         <Link
           href="/"
           className="hover:scale-110 transition-transform duration-300 ease-in-out hover:rotate-6"
@@ -291,86 +295,76 @@ export default function MobileNavbar() {
 
       {/* Dropdown Container */}
       {isOpen && (
-        <div className="w-full max-h-screen min-h-screen pb-8 z-10 bg-cyan-500 px-5 overflow-y-scroll">
+        <div className="w-full max-h-screen min-h-screen   bg-cyan-500 px-5 overflow-y-scroll">
           {/* Main Content Container */}
-          <div className="w-full h-screen">
-            <div
-              className={`z-10 absolute inset-y-72 bg-center  inset-x-0 ${
-                activeLink ? "opacity-10 inset-y-52" : ""
-              } `}
-            >
-              <Image
-                height={750}
-                src={nvBG}
-                alt="Image of a desk with a laptop"
-              />
+            
+          <div className="w-full min-h-screen overflow-y-auto">
+        
+            <div className="  h-fit mb-16 space-y-6 pt-4 z-50">
+              {navItems.map((item) => (
+                <div key={item.title} className="w-full   ">
+                  <p
+                    onClick={() => showDropdown(item.title)}
+                    className={`${
+                      activeLink === item.title
+                        ? "text-gray-200 font-extrabold"
+                        : "text-black"
+                    } flex items-center text-3xl font-nunito font-normal tracking-wider `}
+                  >
+                    {item.title}
+                  </p>
+                  <p className={`text-black/60 text-sm font-nunito ${activeLink === item.title ? 'hidden' : 'block'}`}>{item.description}</p>
+
+                  {/* dropdown menu */}
+                  {activeLink && activeLink === item.title && (
+                    <div className="mt-4 space-y-4  ">
+                      {item.dropdown.map((e) => (
+                        <Link
+                          key={e.id}
+                          href={e.href}
+                          className="block text-xl"
+                        >
+                          <div className="flex flow-row space-x-4 items-center bg-cyan-300 w-full p-2 rounded-xl">
+                            <Image
+                              alt={e.imgAlt}
+                              src={e.imgSrc}
+                              height={56}
+                              width={56}
+                            />
+                            <p className="font-nunito  tracking-wider flex text-black ">
+                              {e.title}{" "}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-            {/* Verwijder overflow-y-scroll hier */}
-            {navItems.map((item) => (
-              <div key={item.title} className="w-full py-4">
-                <p
-                  onClick={() => showDropdown(item.title)}
-                  className={`${
-                    activeLink === item.title
-                      ? "text-gray-200 font-bold"
-                      : "text-black"
-                  } flex items-center text-2xl font-nunito font-normal tracking-wider `}
-                >
-                  {item.title}
-                </p>
 
-                {/* Show dropdown items if the active link matches the category */}
-                {activeLink && activeLink === item.title && (
-                  <div className="mt-4 space-y-4 z-10 ">
-                    {item.dropdown.map((e) => (
-                      <Link key={e.id} href={e.href} className="block text-xl">
-                        <div className="flex flow-row space-x-4 items-center bg-cyan-300/40 w-full p-2 rounded-xl">
-                          <Image
-                            alt={e.imgAlt}
-                            src={e.imgSrc}
-                            height={56}
-                            width={56}
-                          />
-                          <p className="font-nunito tracking-wider flex ">
-                            {e.title}{" "}
-                            <span className="my-auto ml-2">
-                              <Image
-                              className="invert"
-                                src={arrowRight}
-                                height={40}
-                                alt="arrow pointing right"
-                              />
-                            </span>
-                          </p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                )}
+            <div className="fixed bottom-0 left-0 right-0 bg-cyan-300 ">
+              <div className="flex justify-between w-full  p-4">
+                <Image
+                  onClick={toggleMobileMenu}
+                  src={Whatsapp}
+                  alt="Whatsapp Icon"
+                  height={30}
+                  width={30}
+                />
+                <Image
+                  onClick={toggleMobileMenu}
+                  src={Email}
+                  alt="Email Icon"
+                  height={30}
+                  width={30}
+                />
               </div>
-            ))}
-          </div>
-
-          <div className="fixed bottom-0 left-0 right-0 bg-cyan-300 ">
-            <div className="flex justify-between w-full  p-4">
-              <Image
-                onClick={toggleMobileMenu}
-                src={Whatsapp}
-                alt="Whatsapp Icon"
-                height={30}
-                width={30}
-              />
-              <Image
-                onClick={toggleMobileMenu}
-                src={Email}
-                alt="Email Icon"
-                height={30}
-                width={30}
-              />
             </div>
           </div>
         </div>
       )}
+          
     </nav>
   );
 }
