@@ -304,17 +304,17 @@ export default function MobileNavbar() {
         >
           {/* Main Content Container */}
 
-          <div className="w-full min-h-screen overflow-y-auto z-50">
-            <div className="  h-fit mb-36 space-y-6 pt-4 z-50">
+          <div className="w-full min-h-screen overflow-y-auto ">
+            <div className=" mb-24 h-fit space-y-6  ">
               {navItems.map((item) => (
                 <div key={item.title} className="w-full   ">
                   <p
                     onClick={() => showDropdown(item.title)}
                     className={`${
                       activeLink === item.title
-                        ? "text-gray-900 font-extrabold"
-                        : "text-black"
-                    } flex items-center text-2xl font-nunito font-normal tracking-wider `}
+                        ? "text-gray-900 font-semibold"
+                        : "text-black  "
+                    } flex items-center text-2xl font-nunito  font-normal tracking-wider `}
                   >
                     {item.title}
                   </p>
