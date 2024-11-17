@@ -201,33 +201,33 @@ const navItems = [
       },
     ],
   },
-  //   {
-  //     title: "Contact",
-  //     href: "/contact",
-  //     description: "Neem contact met ons op voor meer informatie of om samen te werken aan digitale oplossingen.",
-  //     dropdown: [
-  //       {
-  //         id: 1,
-  //         title: "E-mail",
-  //         catchPhrase: "We staan klaar om jouw vragen te beantwoorden en samen te werken aan op maat gemaakte digitale oplossingen.",
-  //         description:
-  //           "Ons team is beschikbaar om jouw vragen te beantwoorden en advies te bieden over hoe we jouw bedrijf verder kunnen helpen. Of je nu geïnteresseerd bent in een project, meer informatie zoekt, of gewoon een vraag hebt, wij zorgen voor een snelle en efficiënte reactie.",
-  //         imgSrc: Email,
-  //         imgAlt: "Icon displaying  an email",
-  //         href: "/contact-form",
-  //       },
-  //       {
-  //         id: 2,
-  //         title: "WhatsApp",
-  //         catchPhrase: "Snel en persoonlijk contact via WhatsApp – we zijn altijd bereikbaar voor jou.",
-  //         description:
-  //           "Voor directe en persoonlijke communicatie kun je ons eenvoudig bereiken via WhatsApp. Stuur ons een bericht en we zorgen ervoor dat je snel een antwoord krijgt op jouw vraag of verzoek.",
-  //         imgSrc: Whatsapp,
-  //         imgAlt: "Icon displaying the logo of whatsapp",
-  //         href: "/whatsapp",
-  //       }
-  //     ]
-  //   }
+    {
+      title: "Contact",
+      href: "/contact",
+      description: "Neem contact met ons op voor meer informatie of om samen te werken aan digitale oplossingen.",
+      dropdown: [
+        {
+          id: 1,
+          title: "E-mail",
+          catchPhrase: "We staan klaar om jouw vragen te beantwoorden en samen te werken aan op maat gemaakte digitale oplossingen.",
+          description:
+            "Ons team is beschikbaar om jouw vragen te beantwoorden en advies te bieden over hoe we jouw bedrijf verder kunnen helpen. Of je nu geïnteresseerd bent in een project, meer informatie zoekt, of gewoon een vraag hebt, wij zorgen voor een snelle en efficiënte reactie.",
+          imgSrc: Email,
+          imgAlt: "Icon displaying  an email",
+          href: "/contact-form",
+        },
+        {
+          id: 2,
+          title: "WhatsApp",
+          catchPhrase: "Snel en persoonlijk contact via WhatsApp – we zijn altijd bereikbaar voor jou.",
+          description:
+            "Voor directe en persoonlijke communicatie kun je ons eenvoudig bereiken via WhatsApp. Stuur ons een bericht en we zorgen ervoor dat je snel een antwoord krijgt op jouw vraag of verzoek.",
+          imgSrc: Whatsapp,
+          imgAlt: "Icon displaying the logo of whatsapp",
+          href: "/whatsapp",
+        }
+      ]
+    }
 ];
 
 export default function MobileNavbar() {
@@ -252,9 +252,7 @@ export default function MobileNavbar() {
   return (
     <nav className="md:hidden  z-10 fixed top-0 w-full ">
       <div
-        className={`w-full p-2  items-center bg-cyan-500 flex flex-row  ${
-          isOpen && "border-b-2 "
-        } `}
+        className={`w-full p-2  items-center bg-cyan-500 flex flex-row  ${isOpen? 'bg-gradient-to-b from-cyan-500 to-cyan-200': 'bg-cyan-500'} `}
       >
         <Link
           href="/"
@@ -295,25 +293,38 @@ export default function MobileNavbar() {
 
       {/* Dropdown Container */}
       {isOpen && (
-        <div className="w-full max-h-screen min-h-screen   bg-cyan-500 px-5 overflow-y-scroll">
+        <div
+          className="w-full max-h-screen min-h-screen   bg-cyan-500 px-5 overflow-y-scroll"
+          style={{
+            backgroundImage: "url(/custom-bg/nav-bg.svg)",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover", // Of gebruik 'contain' afhankelijk van je design
+          }}
+        >
           {/* Main Content Container */}
-            
-          <div className="w-full min-h-screen overflow-y-auto">
-        
-            <div className="  h-fit mb-16 space-y-6 pt-4 z-50">
+
+          <div className="w-full min-h-screen overflow-y-auto z-50">
+            <div className="  h-fit mb-36 space-y-6 pt-4 z-50">
               {navItems.map((item) => (
                 <div key={item.title} className="w-full   ">
                   <p
                     onClick={() => showDropdown(item.title)}
                     className={`${
                       activeLink === item.title
-                        ? "text-gray-200 font-extrabold"
+                        ? "text-gray-900 font-extrabold"
                         : "text-black"
-                    } flex items-center text-3xl font-nunito font-normal tracking-wider `}
+                    } flex items-center text-2xl font-nunito font-normal tracking-wider `}
                   >
                     {item.title}
                   </p>
-                  <p className={`text-black/60 text-sm font-nunito ${activeLink === item.title ? 'hidden' : 'block'}`}>{item.description}</p>
+                  <p
+                    className={`text-black/60 text-sm font-nunito -tracking-wider ${
+                      activeLink === item.title ? "hidden" : "block"
+                    }`}
+                  >
+                    {item.description}
+                  </p>
 
                   {/* dropdown menu */}
                   {activeLink && activeLink === item.title && (
@@ -322,14 +333,14 @@ export default function MobileNavbar() {
                         <Link
                           key={e.id}
                           href={e.href}
-                          className="block text-xl"
+                          className="block "
                         >
                           <div className="flex flow-row space-x-4 items-center bg-cyan-300 w-full p-2 rounded-xl">
                             <Image
                               alt={e.imgAlt}
                               src={e.imgSrc}
-                              height={56}
-                              width={56}
+                              height={36}
+                              width={36}
                             />
                             <p className="font-nunito  tracking-wider flex text-black ">
                               {e.title}{" "}
@@ -343,7 +354,7 @@ export default function MobileNavbar() {
               ))}
             </div>
 
-            <div className="fixed bottom-0 left-0 right-0 bg-cyan-300 ">
+            {/* <div className="fixed bottom-0 left-0 right-0 bg-cyan-100/10   ">
               <div className="flex justify-between w-full  p-4">
                 <Image
                   onClick={toggleMobileMenu}
@@ -352,6 +363,7 @@ export default function MobileNavbar() {
                   height={30}
                   width={30}
                 />
+
                 <Image
                   onClick={toggleMobileMenu}
                   src={Email}
@@ -360,11 +372,10 @@ export default function MobileNavbar() {
                   width={30}
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       )}
-          
     </nav>
   );
 }

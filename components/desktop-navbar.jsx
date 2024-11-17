@@ -257,7 +257,8 @@ export default function DesktopNavbar() {
       className="hidden md:block   z-10 fixed top-0 w-full"
       onMouseLeave={() => showDropdown(null)}
     >
-      <div className="flex flex-row bg-cyan-500">
+      <div className={`flex flex-row ${activeLink? 'bg-gradient-to-b from-cyan-500 to-cyan-200': 'bg-cyan-500'} `}
+      >
         <Link
           href="/"
           className="hover:scale-110 transition-transform duration-300 ease-in-out hover:rotate-6"
@@ -286,7 +287,13 @@ export default function DesktopNavbar() {
 
       {/* Dropdown menu voor de actieve link */}
       {activeLink && (
-        <div className="flex flex-row w-full z-10  bg-cyan-500">
+        <div className="flex flex-row w-full z-10  bg-cyan-500"
+        style={{
+          backgroundImage: "url(/custom-bg/nav-bg.svg)",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover", // Of gebruik 'contain' afhankelijk van je design
+        }}>
           <div className="flex flex-col ml-4  w-[35%]  ">
             <h1 className="text-4xl font-nunito font-semibold tracking-wider mb-2 pt-2  ">
               {activeLink}{" "}
