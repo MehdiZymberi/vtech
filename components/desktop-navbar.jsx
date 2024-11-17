@@ -92,7 +92,7 @@ export default function DesktopNavbar() {
 
           <div className="grid grid-cols-2 gap-4 w-full  ">
             {dropdownItemArray.map((item) => (
-              <div key={item.id} className=" rounded-md p-2 h-fit">
+              <div key={item.id} className=" rounded-md p-2 h-fit ">
                 <div className="flex items-center mb-4">
                   <Image
                     src={item.imgSrc}
@@ -100,7 +100,7 @@ export default function DesktopNavbar() {
                     height={40}
                     className={`${
                       currentItem === item.title
-                        ? "invert font-medium"
+                        ? " font-medium"
                         : undefined
                     }`}
                   />
@@ -110,7 +110,7 @@ export default function DesktopNavbar() {
                     href={item.href}
                     className={`font-nunito tracking-widest hover:underline ml-4 ${
                       currentItem === item.title
-                        ? "text-white font-medium"
+                        ? "text-gray-700 font-bold"
                         : undefined
                     }`}
                   >
@@ -120,7 +120,7 @@ export default function DesktopNavbar() {
                 <p
                   className={` font-nunito font-medium md:text-sm lg:text-base w-full tracking-widest ${
                     currentItem === item.title
-                      ? "text-white font-medium opacity-100"
+                      ? "text-gray-700 font-medium opacity-100"
                       : "opacity-100"
                   }`}
                 >
