@@ -83,7 +83,7 @@ export default function MobileNavbar() {
           {/* Main Content Container */}
 
           <div className="w-full min-h-screen overflow-y-auto ">
-            <div className=" mb-24 h-fit space-y-6  ">
+            <div className=" mb-24 h-fit space-y-6 mt-8 ">
               {navItems.map((item) => (
                 <div key={item.title} className="w-full   ">
                   <p
