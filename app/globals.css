@@ -6,6 +6,25 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+@font-face {
+  font-family: 'Nunito';
+  src: url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sour Gummy';
+  src: url('https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@200;300;400;500;600;700;800;900&display=swap');
+  font-display: swap;
+}
+/* Optionele Tailwind-klassen via CSS */
+.font-nunito {
+  font-family: 'Nunito', sans-serif;
+}
+
+.font-sour-gummy {
+  font-family: 'Sour Gummy', sans-serif;
+}
 
 ::-webkit-scrollbar{
 display: none;

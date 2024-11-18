@@ -1,9 +1,16 @@
-import MainNavbar from "@/components/main-navbar";
+import MainNavbar from "@/components/navbar/main-navbar";
 import "./globals.css";
 
 import { Nunito } from "next/font/google";
+import { Sour_Gummy } from "next/font/google";
 const nunito = Nunito({
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"], // Kies de gewenste gewichten
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"], // Kies de gewenste gewichten
+  subsets: ["latin"], // Je kunt ook de subsets toevoegen die je nodig hebt
+});
+
+
+const sour_gummy = Sour_Gummy({
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"], // Kies de gewenste gewichten
   subsets: ["latin"], // Je kunt ook de subsets toevoegen die je nodig hebt
 });
 

@@ -10,13 +10,16 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        gold: "#FFD700", // Goudgeel
+        orangeDark: "#FF6A00", // Donker oranje
       },
       fontFamily: {
-        nunito: ["Nunito", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"], // Voeg Nunito toe
+        sourGummy: ["Sour Gummy", "cursive"], // Voeg Sour Gummy toe
       },
       screens: {
         md: "950px",
-        "2xl":"1600",
+        "2xl": "1600px",
       },
     },
   },
