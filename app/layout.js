@@ -1,19 +1,19 @@
 import MainNavbar from "@/components/navbar/main-navbar";
 import "./globals.css";
 
-
 import { Nunito } from "next/font/google";
 import { Sour_Gummy } from "next/font/google";
 const nunito = Nunito({
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"], // Kies de gewenste gewichten
-  subsets: ["latin"], // Je kunt ook de subsets toevoegen die je nodig hebt
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"], 
+  subsets: ["latin"], 
 });
 
 
 const sour_gummy = Sour_Gummy({
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"], // Kies de gewenste gewichten
-  subsets: ["latin"], // Je kunt ook de subsets toevoegen die je nodig hebt
+  // weight: ["200", "300", "400", "500", "600", "700", "800", "900"], 
+  subsets: ["latin"], 
 });
+
 
 export const metadata = {
   title: "Create Next App",
