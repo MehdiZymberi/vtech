@@ -52,7 +52,7 @@ export default function HeroBenefitList() {
         </span>
         <span className="text-cyan-600 font-semibold font-sourGummy text-xl">
           {" "}
-          Intuïtief
+          Intuïtief test
         </span>
       </div>
     </div>
