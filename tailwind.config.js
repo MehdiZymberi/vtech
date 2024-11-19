@@ -1,5 +1,3 @@
-
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -16,8 +14,8 @@ module.exports = {
         orangeDark: "#FF6A00", // Donker oranje
       },
       fontFamily: {
-        nunito: ["Nunito", "sans-serif"], // Voeg Nunito toe
-        // sourGummy: ['Sour Gummy', 'sans-serif'], // Voeg Sour Gummy toe
+        sourGummy: ["Sour Gummy"],
+        nunito: ["Nunito"]
       },
       screens: {
         md: "950px",

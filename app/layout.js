@@ -1,20 +1,7 @@
 import MainNavbar from "@/components/navbar/main-navbar";
 import "./globals.css";
 
-import { Nunito } from "next/font/google";
-// import { SourGummy } from "next/font/google";
-const nunito = Nunito({
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"], 
-  subsets: ["latin"], 
-  display:"swap"
-});
 
-
-// const sourGummy = SourGummy({
-//   weight: ["200", "300", "400", "500", "600", "700", "800", "900"], 
-//   subsets: ["latin"], 
-//     display:"swap"
-// });
 
 
 export const metadata = {
