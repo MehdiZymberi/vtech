@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeroXlScreenBg from "./hero-lg-bg";
 
-import HeroSpa from "@/public/Hero/hero-spa.png";
+import HeroSpa from "@/public/Hero/Hero-spa.png";
 import HeroBenefitList from "./hero-benefit-list";
 
 export default function HeroDesktop() {
