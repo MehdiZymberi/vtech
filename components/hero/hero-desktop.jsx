@@ -16,12 +16,12 @@ export default function HeroDesktop() {
 
         {/* Links van de pagina */}
         <div className="  space-y-6 sm:space-y-4 ">
-          <h1 className=" font-sourGummy text-3xl md:text-2xl lg:text-4xl xl:text-5xl md:leading-relaxed leading-tight  md:tracking-wider font-semibold ">
+          <h1 className=" font-sourGummy text-2xl md:text-2xl lg:text-4xl xl:text-5xl md:leading-relaxed leading-tight  md:tracking-wider font-semibold ">
             Jouw bedrijf <br /> binnen 1 week online en operationeel.
           </h1>
 
           <div className="flex flex-col  space-y-4  ">
-            <h2 className="sm:text-2xl md:text-base xl:text-3xl leading-relaxed font-sourGummy tracking-wider sm:w-[70%]">
+            <h2 className=" text-lg sm:text-2xl md:text-base xl:text-3xl leading-relaxed font-sourGummy tracking-wider sm:w-[70%]">
               Benieuwd hoe een website jouw eenmanszaak kan laten groeien?
             </h2>
             <HeroBenefitListDesktop />
