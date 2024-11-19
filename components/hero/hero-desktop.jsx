@@ -40,7 +40,7 @@ export default function HeroDesktop() {
         {/* carousel  wrapper ...voor nu even */}
 
         <div className="w-full h-full grid grid-cols-1 sm:grid-cols-2 sm:items-center sm:justify-center md:items-start  md:flex md:flex-row   ">
-          <div className=" h-auto  sm:h-[70%]  sm:w-[70%] mx-auto  md:mx-0 flex  mt-8  md:w-[80%] lg:w-[60%] 2xl:w-[100%]  ">
+          <div className=" h-[70%]  sm:h-[70%]  sm:w-[70%] mx-auto  md:mx-0 flex  mt-8  md:w-[80%] lg:w-[60%] 2xl:w-[100%]  ">
             <Image
               src={HeroSpa}
               alt="Illustration of a man working on his desktop"
