@@ -16,17 +16,17 @@ export default function HeroDesktop() {
 
         {/* Links van de pagina */}
         <div className="  space-y-6 sm:space-y-4 ">
-          <h1 className="  text-4xl md:text-4xl lg:text-5xl xl:text-6xl md:leading-relaxed leading-tight font-sourGummy md:tracking-wider font-semibold ">
+          <h1 className="  text-4xl md:text-4xl lg:text-5xl xl:text-6xl md:leading-relaxed leading-tight font-sour-gummy md:tracking-wider font-semibold ">
             Jouw bedrijf <br /> binnen 1 week online en operationeel.
           </h1>
 
           <div className="flex flex-col  space-y-4  ">
-            <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed font-sourGummy tracking-wider sm:w-[70%]">
+            <h2 className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed font-sour-gummy tracking-wider sm:w-[70%]">
               Benieuwd hoe een website jouw eenmanszaak kan laten groeien?
             </h2>
             <Link
               href={"/"}
-              className="  md:block hidden  p-3 text-xl text-bold bg-gold rounded-lg font-sourGummy font-bold w-fit text-cyan-700 hover:font-extrabold hover:scale-110 transition ease-in-out duration-200 hover:text-black hover:bg-transparent hover:border decoration-slate-300"
+              className="  md:block hidden  p-3 text-xl text-bold bg-gold rounded-lg font-sour-gummy font-bold w-fit text-cyan-700 hover:font-extrabold hover:scale-110 transition ease-in-out duration-200 hover:text-black hover:bg-transparent hover:border decoration-slate-300"
             >
               {" "}
               Jouw Website Go
