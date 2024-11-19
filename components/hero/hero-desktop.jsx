@@ -17,7 +17,7 @@ export default function HeroDesktop() {
 
         {/* Links van de pagina */}
         <div className="  space-y-6 sm:space-y-4 ">
-          <h1 className={` font-sourGummy text-4xl md:text-4xl lg:text-5xl xl:text-6xl md:leading-relaxed leading-tight  md:tracking-wider font-semibold `}>
+          <h1 className=" font-sourGummy text-4xl md:text-4xl lg:text-5xl xl:text-6xl md:leading-relaxed leading-tight  md:tracking-wider font-semibold ">
             Jouw bedrijf <br /> binnen 1 week online en operationeel.
           </h1>
 
