@@ -17,7 +17,7 @@ module.exports = {
       },
       fontFamily: {
         nunito: ["Nunito", "sans-serif"], // Voeg Nunito toe
-        sourGummy: ['Sour Gummy', 'sans-serif'], // Voeg Sour Gummy toe
+        // sourGummy: ['Sour Gummy', 'sans-serif'], // Voeg Sour Gummy toe
       },
       screens: {
         md: "950px",
