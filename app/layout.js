@@ -2,7 +2,7 @@ import MainNavbar from "@/components/navbar/main-navbar";
 import "./globals.css";
 
 import { Nunito } from "next/font/google";
-import { Sour_Gummy } from "next/font/google";
+import { SourGummy } from "next/font/google";
 const nunito = Nunito({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"], 
   subsets: ["latin"], 
@@ -10,7 +10,7 @@ const nunito = Nunito({
 });
 
 
-const sour_gummy = Sour_Gummy({
+const sourGummy = SourGummy({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"], 
   subsets: ["latin"], 
     display:"swap"
